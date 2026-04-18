@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage -->
+  <url>
+    <loc>https://tops-cre.manus.space/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tops-cre.manus.space/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tops-cre.manus.space/"/>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://tops-cre.manus.space/#about</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tops-cre.manus.space/#about"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tops-cre.manus.space/#about"/>
+  </url>
+
+  <!-- Signature Line -->
+  <url>
+    <loc>https://tops-cre.manus.space/#signature</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tops-cre.manus.space/#signature"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tops-cre.manus.space/#signature"/>
+  </url>
+
+  <!-- Visit/Contact Section -->
+  <url>
+    <loc>https://tops-cre.manus.space/#visit</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tops-cre.manus.space/#visit"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://tops-cre.manus.space/#visit"/>
+  </url>
+</urlset>

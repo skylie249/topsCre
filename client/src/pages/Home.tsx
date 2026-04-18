@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Instagram, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import SEOHead from '@/components/SEOHead';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
@@ -28,6 +29,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <SEOHead page="home" />
       <Navigation scrolled={scrolled} />
       <main>
         <HeroSection />
