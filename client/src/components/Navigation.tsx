@@ -33,7 +33,7 @@ export default function Navigation({ scrolled }: NavigationProps) {
         {/* Logo */}
         <div className="flex items-center">
           <h1 className="text-lg md:text-xl font-display font-bold text-foreground">
-            VENUS GECKO
+            TOPS CRE
           </h1>
         </div>
 

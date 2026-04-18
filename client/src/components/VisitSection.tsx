@@ -13,36 +13,17 @@ export default function VisitSection() {
       <div className="container">
         <div className="max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
-            Visit Our Store
+            Get in Touch
           </h2>
           <p className="text-base md:text-lg text-foreground/70 mb-12">
-            Experience the Venus Gecko showroom filled with precious companions. Meet geckos
-            waiting for their new family, cared for in the finest environment.
+            Have questions about our geckos or want to learn more about TOPS CRE? We'd love to hear from you. Reach out through any of our channels and we'll get back to you shortly.
           </p>
 
           {/* Store Information */}
           <div className="bg-card p-8 md:p-12 rounded-2xl border border-border mb-12">
             <div className="space-y-6">
-              <div>
-                <h3 className="text-sm font-serif font-semibold text-foreground/60 uppercase tracking-wider mb-2">
-                  Location
-                </h3>
-                <p className="text-lg md:text-xl font-serif text-foreground">
-                  B1, 34 Dongil-ro, Gwangjin-gu, Seoul
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-serif font-semibold text-foreground/60 uppercase tracking-wider mb-2">
-                  Hours
-                </h3>
-                <p className="text-base md:text-lg text-foreground/70">
-                  Reservation Required
-                </p>
-              </div>
-
               {/* Contact Methods */}
-              <div className="pt-6 border-t border-border">
+              <div>
                 <h3 className="text-sm font-serif font-semibold text-foreground/60 uppercase tracking-wider mb-4">
                   Contact
                 </h3>
@@ -52,14 +33,14 @@ export default function VisitSection() {
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
                   >
                     <MessageCircle size={18} />
-                    <span className="text-sm font-medium">Kakao: Venus Gecko</span>
+                    <span className="text-sm font-medium">Kakao: TOPS CRE</span>
                   </a>
                   <a
                     href="#"
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent/10 text-accent hover:bg-accent/20 transition-colors"
                   >
                     <Instagram size={18} />
-                    <span className="text-sm font-medium">@venus_gecko</span>
+                    <span className="text-sm font-medium">@tops_cre</span>
                   </a>
                 </div>
               </div>

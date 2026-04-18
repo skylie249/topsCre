@@ -31,10 +31,10 @@ export default function HeroSection() {
             Crested Gecko Specialised Breeder
           </p>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight">
-            Venus Gecko
+            TOPS CRE
           </h1>
           <p className="text-lg md:text-xl font-serif text-accent uppercase tracking-wide">
-            VENUS GECKO
+            TOPS CRE
           </p>
         </div>
 

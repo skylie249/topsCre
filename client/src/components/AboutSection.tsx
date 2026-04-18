@@ -10,46 +10,46 @@ export default function AboutSection() {
   return (
     <section id="about" className="relative py-20 md:py-32 bg-background">
       <div className="container">
-        {/* Tagline */}
-        <div className="mb-16 md:mb-24 space-y-4">
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground">
-            Eye-contact addicts.
-          </h2>
-          <p className="text-xl md:text-2xl font-serif text-secondary">
-            When Eyes Meet
-            <br />
-            The Addiction Begins
-          </p>
-        </div>
+        {/* Eye-contact Section */}
+        <div className="mb-20 md:mb-32">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground leading-tight mb-6">
+                  Premium Companions
+                </h2>
+                <p className="text-lg md:text-xl font-serif text-secondary leading-relaxed">
+                  We believe that geckos are more than just exotic pets. They are companions that bring wonder and connection into your life. Each gecko in our collection has been carefully selected and raised to ensure the perfect match for your family.
+                </p>
+              </div>
 
-        {/* Main Content */}
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div className="space-y-6">
-            <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
-              Venus Gecko: Your Precious Companion. We focus on the wonder of life rather than
-              artificial splendor.
-            </p>
+              <div className="pt-6 border-t border-border">
+                <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
+                  TOPS CRE represents a commitment to excellence in breeding, care, and the cultivation of meaningful human-gecko relationships. We focus on the wonder of life rather than artificial splendor.
+                </p>
+              </div>
+            </div>
 
-            <div className="pt-6 border-t border-border">
-              <h3 className="text-lg md:text-xl font-serif font-semibold text-foreground mb-4">
-                CORE ESSENCE
-              </h3>
-              <h4 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-6">
-                Precious Companion,
-                <br />
-                Beyond Value
-              </h4>
-              <p className="text-base md:text-lg text-foreground/70 leading-relaxed">
-                Venus Gecko is more than just a breeder; we propose a proper companion lifestyle.
-                Meet the premium geckos that will be with you for a lifetime.
-              </p>
+            {/* Right Column - Decorative */}
+            <div className="hidden md:flex items-center justify-center">
+              <div className="w-full h-80 bg-gradient-to-br from-secondary/20 to-accent/10 rounded-2xl flex items-center justify-center">
+                <div className="text-center space-y-4">
+                  <div className="text-6xl">🦎</div>
+                  <p className="text-foreground/60 font-serif">A Connection Beyond Words</p>
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          {/* Right Column - Decorative */}
-          <div className="hidden md:flex items-center justify-center">
-            <div className="w-full h-80 bg-gradient-to-br from-secondary/20 to-accent/10 rounded-2xl" />
-          </div>
+        {/* Core Essence Intro */}
+        <div className="space-y-6 mb-16 md:mb-24">
+          <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground">
+            What Makes Us Different
+          </h3>
+          <p className="text-base md:text-lg text-foreground/70 max-w-3xl">
+            At TOPS CRE, we understand that choosing a gecko is a significant decision. That's why we've built our reputation on three core principles that guide everything we do.
+          </p>
         </div>
       </div>
 

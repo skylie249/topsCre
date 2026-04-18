@@ -15,22 +15,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-lg md:text-xl font-display font-bold">VENUS GECKO</h3>
+            <h3 className="text-lg md:text-xl font-display font-bold">TOPS CRE</h3>
             <p className="text-sm text-background/80 leading-relaxed">
               Delivering value beyond precious companions. A premium gecko brand proposing a new
               companion culture.
             </p>
-          </div>
-
-          {/* Store Info */}
-          <div className="space-y-4">
-            <h4 className="text-sm font-serif font-semibold uppercase tracking-wider">
-              SIGNATURE
-            </h4>
-            <div className="text-sm text-background/80 space-y-2">
-              <p>34 Dongil-ro, Gwangjin-gu, Seoul</p>
-              <p>B1F (Reservation Required)</p>
-            </div>
           </div>
 
           {/* Contact Section */}
@@ -39,8 +28,19 @@ export default function Footer() {
               CONTACT
             </h4>
             <div className="text-sm text-background/80 space-y-2">
-              <p>Kakao: Venus Gecko</p>
-              <p>Instagram: @venus_gecko</p>
+              <p>Kakao: TOPS CRE</p>
+              <p>Instagram: @tops_cre</p>
+            </div>
+          </div>
+
+          {/* Partners Section */}
+          <div className="space-y-4">
+            <h4 className="text-sm font-serif font-semibold uppercase tracking-wider">
+              PARTNERS
+            </h4>
+            <div className="text-sm text-background/80 space-y-2">
+              <p>VENUS GECKO</p>
+              <p>도도시</p>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Copyright */}
           <p className="text-xs text-background/70">
-            © {currentYear} VENUS GECKO. ALL RIGHTS RESERVED. CRAFTED FOR EXCELLENCY.
+            © {currentYear} TOPS CRE. ALL RIGHTS RESERVED. CRAFTED FOR EXCELLENCY.
           </p>
 
           {/* Social Links */}
@@ -83,11 +83,7 @@ export default function Footer() {
           {/* Partner Links */}
           <div className="flex gap-4 text-xs text-background/70">
             <a href="#" className="hover:text-background transition-colors">
-              VENUS FRIENDS
-            </a>
-            <span>|</span>
-            <a href="#" className="hover:text-background transition-colors">
-              TOPS CRE
+              VENUS GECKO
             </a>
             <span>|</span>
             <a href="#" className="hover:text-background transition-colors">

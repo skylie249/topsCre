@@ -10,7 +10,7 @@ import VisitSection from '@/components/VisitSection';
 import Footer from '@/components/Footer';
 
 /**
- * Venus Gecko - Crested Gecko Breeder Website
+ * TOPS CRE - Crested Gecko Breeder Website
  * Design Philosophy: Minimalism + Naturalism
  * Color Palette: Warm cream (#F5F1E8), Forest green (#2D3D2D), Terracotta (#C85A3A)
  * Typography: Playfair Display (display), Lora (serif), Inter (sans-serif)
