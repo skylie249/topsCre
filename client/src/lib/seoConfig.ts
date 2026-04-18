@@ -14,7 +14,7 @@ export interface SEOConfig {
   lang: string;
 }
 
-const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://tops-cre.manus.space';
+const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://tops-cre.vercel.app';
 const ogImage = 'https://d2xsxph8kpxj0f.cloudfront.net/310519663567263507/7kBMT4bwFHFXdzKagqZs6h/hero-gecko-natural-eDH2mUGJagrLVJCxK5V7jN.webp';
 
 export const seoConfigs = {

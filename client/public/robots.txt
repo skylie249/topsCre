@@ -20,4 +20,4 @@ Allow: /
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://tops-cre.manus.space/sitemap.xml
+Sitemap: https://tops-cre.vercel.app/sitemap.xml

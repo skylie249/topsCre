@@ -61,7 +61,7 @@ export default function SEOHead({ page = 'home' }: SEOHeadProps) {
           '@context': 'https://schema.org',
           '@type': 'Organization',
           name: 'TOPS CRE',
-          url: 'https://tops-cre.manus.space',
+          url: 'https://tops-cre.vercel.app',
           logo: seoConfig.ogImage,
           description: seoConfig.description,
           sameAs: [
