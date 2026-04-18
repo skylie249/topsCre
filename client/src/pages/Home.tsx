@@ -1,25 +1,42 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Instagram, MessageCircle } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import AboutSection from '@/components/AboutSection';
+import CoreEssenceSection from '@/components/CoreEssenceSection';
+import SignatureSection from '@/components/SignatureSection';
+import VisitSection from '@/components/VisitSection';
+import Footer from '@/components/Footer';
 
 /**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+ * Venus Gecko - Crested Gecko Breeder Website
+ * Design Philosophy: Minimalism + Naturalism
+ * Color Palette: Warm cream (#F5F1E8), Forest green (#2D3D2D), Terracotta (#C85A3A)
+ * Typography: Playfair Display (display), Lora (serif), Inter (sans-serif)
  */
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-background text-foreground">
+      <Navigation scrolled={scrolled} />
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        <HeroSection />
+        <AboutSection />
+        <CoreEssenceSection />
+        <SignatureSection />
+        <VisitSection />
       </main>
+      <Footer />
     </div>
   );
 }
