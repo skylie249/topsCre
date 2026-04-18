@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 
 /**
@@ -8,6 +9,7 @@ import { Button } from '@/components/ui/button';
  * Features: Embla carousel-like functionality, filter buttons, navigation
  */
 export default function SignatureSection() {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [filter, setFilter] = useState<'all' | 'male' | 'female'>('all');
 
@@ -69,10 +71,10 @@ export default function SignatureSection() {
       <div className="container">
         <div className="mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-            Signature Line
+            {t('signature.title')}
           </h2>
           <p className="text-base md:text-lg text-foreground/70">
-            Explore our rare and exclusive lineup of geckos.
+            {t('signature.description')}
           </p>
         </div>
 
@@ -86,7 +88,7 @@ export default function SignatureSection() {
             variant={filter === 'male' ? 'default' : 'outline'}
             className={filter === 'male' ? 'bg-accent text-accent-foreground' : ''}
           >
-            VIEW MALE
+            {t('signature.viewMale')}
           </Button>
           <Button
             onClick={() => {
@@ -96,7 +98,7 @@ export default function SignatureSection() {
             variant={filter === 'female' ? 'default' : 'outline'}
             className={filter === 'female' ? 'bg-accent text-accent-foreground' : ''}
           >
-            VIEW FEMALE
+            {t('signature.viewFemale')}
           </Button>
         </div>
 
@@ -128,7 +130,7 @@ export default function SignatureSection() {
                         variant="outline"
                         className="mt-4 border-accent text-accent hover:bg-accent/10"
                       >
-                        VIEW MORE
+                        {t('signature.viewMore')}
                       </Button>
                     </div>
                   </div>

@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "홈",
+    "about": "소개",
+    "signature": "시그니처",
+    "visit": "방문",
+    "contact": "연락처"
+  },
+  "hero": {
+    "breeder": "크레스티드 게코 전문 브리더",
+    "title": "TOPS CRE",
+    "subtitle": "TOPS CRE",
+    "description": "크레스티드 게코 전문 번식 및 판매"
+  },
+  "about": {
+    "title": "프리미엄 동반자",
+    "description": "우리는 게코가 단순한 이국적인 애완동물 이상의 존재라고 믿습니다. 게코는 당신의 삶에 경이로움과 연결을 가져오는 동반자입니다. 우리 컬렉션의 각 게코는 당신의 가족을 위한 완벽한 짝을 보장하기 위해 신중하게 선택되고 양육되었습니다.",
+    "essence": "TOPS CRE는 번식, 관리, 그리고 의미 있는 인간-게코 관계 형성에 대한 우리의 약속을 나타냅니다. 우리는 인공적인 화려함보다는 삶의 경이로움에 초점을 맞춥니다.",
+    "whatMakesDifferent": "우리를 다르게 만드는 것",
+    "differenceDescription": "TOPS CRE에서는 게코를 선택하는 것이 중요한 결정이라는 것을 이해합니다. 그래서 우리는 모든 일에 지침을 주는 세 가지 핵심 원칙으로 우리의 평판을 구축했습니다.",
+    "connection": "말 이상의 연결"
+  },
+  "coreEssence": {
+    "title": "완벽한 동반자",
+    "description": "우리는 게코를 단순한 이국적인 동물이 아닌 당신의 특별한 '동반자 가족'으로 정의합니다. 눈이 만나는 순간 느껴지는 놀라운 연결을 경험해보세요.",
+    "values": [
+      {
+        "number": "01",
+        "title": "순수한 품질",
+        "description": "우리는 엄격한 선택 과정을 거친 최고 수준의 모프만을 선보입니다."
+      },
+      {
+        "number": "02",
+        "title": "예술적 관리",
+        "description": "우리는 섬세한 환경에서 최고의 상태를 유지하며, 그들을 가족처럼 대합니다."
+      },
+      {
+        "number": "03",
+        "title": "프리미엄 신뢰",
+        "description": "우리는 입양 후에도 지속적인 관리와 소통을 약속합니다."
+      }
+    ]
+  },
+  "signature": {
+    "title": "시그니처 라인",
+    "description": "우리의 희귀하고 독점적인 게코 라인업을 탐색해보세요.",
+    "viewMale": "수컷 보기",
+    "viewFemale": "암컷 보기",
+    "viewMore": "더 보기"
+  },
+  "visit": {
+    "title": "연락 주기",
+    "description": "TOPS CRE에 대해 궁금한 점이 있거나 더 알고 싶으신가요? 우리의 채널 중 하나로 연락주시면 빠르게 회신해드리겠습니다.",
+    "contact": "연락처",
+    "kakao": "카카오: TOPS CRE",
+    "instagram": "@tops_cre",
+    "bookVisit": "방문 예약"
+  },
+  "footer": {
+    "brand": "TOPS CRE",
+    "description": "소중한 동반자를 넘어선 가치를 제공합니다. 새로운 동반자 문화를 제안하는 프리미엄 게코 브랜드입니다.",
+    "contact": "연락처",
+    "partners": "파트너",
+    "copyright": "© {{year}} TOPS CRE. 모든 권리 보유. 우수성을 위해 제작되었습니다.",
+    "availableList": "가능한 목록",
+    "kakaoTalk": "카카오톡",
+    "instagram": "인스타그램",
+    "naverBand": "네이버 밴드"
+  }
+}

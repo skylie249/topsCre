@@ -1,9 +1,12 @@
+import { useTranslation } from 'react-i18next';
+
 /**
  * Hero Section Component
  * Design: Full-height hero with gecko image background, centered text overlay
  * Features: Animated text entrance, scroll indicator
  */
 export default function HeroSection() {
+  const { t } = useTranslation();
   const heroImageUrl =
     'https://d2xsxph8kpxj0f.cloudfront.net/310519663567263507/7kBMT4bwFHFXdzKagqZs6h/hero-gecko-natural-eDH2mUGJagrLVJCxK5V7jN.webp';
 
@@ -28,18 +31,18 @@ export default function HeroSection() {
       <div className="relative z-10 container flex flex-col items-center justify-center text-center gap-6 px-4">
         <div className="space-y-2 animate-fade-in-up">
           <p className="text-sm md:text-base font-serif text-white/80 uppercase tracking-widest">
-            Crested Gecko Specialised Breeder
+            {t('hero.breeder')}
           </p>
           <h1 className="text-5xl md:text-7xl font-display font-bold text-white leading-tight">
-            TOPS CRE
+            {t('hero.title')}
           </h1>
           <p className="text-lg md:text-xl font-serif text-accent uppercase tracking-wide">
-            TOPS CRE
+            {t('hero.subtitle')}
           </p>
         </div>
 
         <p className="text-base md:text-lg text-white/90 font-serif max-w-2xl mt-8">
-          Crested Gecko Specialised Breeding & Sale
+          {t('hero.description')}
         </p>
 
         {/* Scroll Indicator */}

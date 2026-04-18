@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { Instagram, MessageCircle, Link2 } from 'lucide-react';
 
 /**
@@ -6,6 +7,7 @@ import { Instagram, MessageCircle, Link2 } from 'lucide-react';
  * Features: Copyright, social links, partner links
  */
 export default function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -15,17 +17,16 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           {/* Brand Section */}
           <div className="space-y-4">
-            <h3 className="text-lg md:text-xl font-display font-bold">TOPS CRE</h3>
+            <h3 className="text-lg md:text-xl font-display font-bold">{t('footer.brand')}</h3>
             <p className="text-sm text-background/80 leading-relaxed">
-              Delivering value beyond precious companions. A premium gecko brand proposing a new
-              companion culture.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Contact Section */}
           <div className="space-y-4">
             <h4 className="text-sm font-serif font-semibold uppercase tracking-wider">
-              CONTACT
+              {t('footer.contact')}
             </h4>
             <div className="text-sm text-background/80 space-y-2">
               <p>Kakao: TOPS CRE</p>
@@ -36,7 +37,7 @@ export default function Footer() {
           {/* Partners Section */}
           <div className="space-y-4">
             <h4 className="text-sm font-serif font-semibold uppercase tracking-wider">
-              PARTNERS
+              {t('footer.partners')}
             </h4>
             <div className="text-sm text-background/80 space-y-2">
               <p>VENUS GECKO</p>
@@ -52,7 +53,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Copyright */}
           <p className="text-xs text-background/70">
-            © {currentYear} TOPS CRE. ALL RIGHTS RESERVED. CRAFTED FOR EXCELLENCY.
+            {t('footer.copyright', { year: currentYear })}
           </p>
 
           {/* Social Links */}
@@ -95,19 +96,19 @@ export default function Footer() {
         {/* Additional Links */}
         <div className="mt-8 pt-8 border-t border-background/20 flex flex-col md:flex-row gap-4 text-xs text-background/70">
           <a href="#" className="hover:text-background transition-colors">
-            AVAILABLE LIST
+            {t('footer.availableList')}
           </a>
           <span>|</span>
           <a href="#" className="hover:text-background transition-colors">
-            KAKAO TALK
+            {t('footer.kakaoTalk')}
           </a>
           <span>|</span>
           <a href="#" className="hover:text-background transition-colors">
-            INSTAGRAM
+            {t('footer.instagram')}
           </a>
           <span>|</span>
           <a href="#" className="hover:text-background transition-colors">
-            NAVER BAND
+            {t('footer.naverBand')}
           </a>
         </div>
       </div>

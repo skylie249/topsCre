@@ -1,36 +1,26 @@
+import { useTranslation } from 'react-i18next';
+
 /**
  * Core Essence Section Component
  * Design: Three-column layout with cards showcasing core values
  * Features: Numbered items, hover effects, minimalist card design
  */
 export default function CoreEssenceSection() {
-  const coreValues = [
-    {
-      number: '01',
-      title: 'Pure Quality',
-      description: 'We showcase only top-tier morphs that have undergone strict selection processes.',
-    },
-    {
-      number: '02',
-      title: 'Artistic Care',
-      description: 'We maintain the best condition in a delicate environment, treating them like family.',
-    },
-    {
-      number: '03',
-      title: 'Premium Trust',
-      description: 'We promise continuous management and communication even after adoption.',
-    },
-  ];
+  const { t } = useTranslation();
+  const coreValues = t('coreEssence.values', { returnObjects: true }) as Array<{
+    number: string;
+    title: string;
+    description: string;
+  }>;
 
   return (
     <section className="py-20 md:py-32 bg-background">
       <div className="container">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-          The Perfect Companion
+          {t('coreEssence.title')}
         </h2>
         <p className="text-base md:text-lg text-foreground/70 mb-16 md:mb-24 max-w-3xl">
-          We define geckos not as mere exotic animals, but as your special 'companion family'.
-          Experience the wonderful connection the moment your eyes meet.
+          {t('coreEssence.description')}
         </p>
 
         {/* Core Values Grid */}

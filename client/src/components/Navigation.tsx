@@ -1,6 +1,8 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface NavigationProps {
   scrolled: boolean;
@@ -13,12 +15,20 @@ interface NavigationProps {
  */
 export default function Navigation({ scrolled }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
+  const { t } = useTranslation();
+  const { language, setLanguage } = useLanguage();
 
   const navItems = [
-    { label: 'HOME', href: '#home' },
-    { label: 'ABOUT', href: '#about' },
-    { label: 'SIGNATURE', href: '#signature' },
-    { label: 'VISIT', href: '#visit' },
+    { label: t('nav.home'), href: '#home' },
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.signature'), href: '#signature' },
+    { label: t('nav.visit'), href: '#visit' },
+  ];
+
+  const languages = [
+    { code: 'en', label: 'English' },
+    { code: 'ko', label: '한국어' },
   ];
 
   return (
@@ -53,16 +63,44 @@ export default function Navigation({ scrolled }: NavigationProps) {
         {/* Right Section */}
         <div className="flex items-center gap-4">
           {/* Language Selector */}
-          <button className="hidden sm:flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors">
-            <span>KR</span>
-          </button>
+          <div className="relative">
+            <button
+              className="hidden sm:flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors p-2 rounded-lg hover:bg-secondary/20"
+              onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
+            >
+              <Globe size={18} />
+              <span>{language.toUpperCase()}</span>
+            </button>
+
+            {/* Language Dropdown */}
+            {languageMenuOpen && (
+              <div className="absolute right-0 mt-2 w-32 bg-card border border-border rounded-lg shadow-lg z-50">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      setLanguage(lang.code);
+                      setLanguageMenuOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-2 text-sm transition-colors ${
+                      language === lang.code
+                        ? 'bg-accent/20 text-accent font-semibold'
+                        : 'text-foreground/70 hover:text-foreground hover:bg-secondary/20'
+                    }`}
+                  >
+                    {lang.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* Contact Button */}
           <Button
             className="hidden sm:inline-flex bg-accent hover:bg-accent/90 text-accent-foreground font-medium"
             size="sm"
           >
-            Contact
+            {t('nav.contact')}
           </Button>
 
           {/* Mobile Menu Button */}
@@ -90,8 +128,28 @@ export default function Navigation({ scrolled }: NavigationProps) {
               </a>
             ))}
             <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium">
-              Contact
+              {t('nav.contact')}
             </Button>
+
+            {/* Mobile Language Selector */}
+            <div className="pt-4 border-t border-border space-y-2">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => {
+                    setLanguage(lang.code);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={`w-full text-left px-4 py-2 text-sm rounded-lg transition-colors ${
+                    language === lang.code
+                      ? 'bg-accent/20 text-accent font-semibold'
+                      : 'text-foreground/70 hover:text-foreground hover:bg-secondary/20'
+                  }`}
+                >
+                  {lang.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}
