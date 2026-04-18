@@ -3,7 +3,6 @@
     "home": "홈",
     "about": "소개",
     "signature": "시그니처",
-    "visit": "방문",
     "contact": "연락처"
   },
   "hero": {
@@ -53,7 +52,7 @@
   },
   "footer": {
     "brand": "TOPS CRE",
-    "description": "소중한 동반자를 넘어선 가치를 제공합니다. 새로운 동반자 문화를 제안하는 프리미엄 게코 브랜드입니다.",
+    "description": "소중한 동반자를 넘어선 가치를 제공합니다. 새로운 동반자 문화를 제안하는 크레스티드 게코 전문 브리더입니다.",
     "contact": "연락처",
     "partners": "파트너",
     "copyright": "© {{year}} TOPS CRE. 모든 권리 보유. 우수성을 위해 제작되었습니다.",
