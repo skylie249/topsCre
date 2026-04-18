@@ -29,8 +29,24 @@ export default function Footer() {
               {t('footer.contact')}
             </h4>
             <div className="text-sm text-background/80 space-y-2">
-              <p>Kakao: TOPS CRE</p>
-              <p>Instagram: @tops_cre</p>
+              <a
+                href="https://open.kakao.com/o/szrb6myh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-background transition-colors"
+                aria-label="Kakao Talk"
+              >
+                Kakao: TOPS CRE
+              </a>
+              <a
+                href="https://www.instagram.com/tops_cre/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-background transition-colors"
+                aria-label="Instagram"
+              >
+                Instagram: @tops_cre
+              </a>
             </div>
           </div>
 
@@ -40,8 +56,26 @@ export default function Footer() {
               {t('footer.partners')}
             </h4>
             <div className="text-sm text-background/80 space-y-2">
-              <p>VENUS GECKO</p>
-              <p>도도시</p>
+              <p>
+                <a
+                  href="https://venus-gecko.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-background transition-colors"
+                >
+                  VENUS GECKO
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://www.dodosi.co.kr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-background transition-colors"
+                >
+                  도도시
+                </a>
+              </p>
             </div>
           </div>
         </div>
@@ -55,62 +89,8 @@ export default function Footer() {
           <p className="text-xs text-background/70">
             {t('footer.copyright', { year: currentYear })}
           </p>
-
-          {/* Social Links */}
-          <div className="flex gap-6">
-            <a
-              href="#"
-              className="text-background/70 hover:text-background transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram size={20} />
-            </a>
-            <a
-              href="#"
-              className="text-background/70 hover:text-background transition-colors"
-              aria-label="Kakao Talk"
-            >
-              <MessageCircle size={20} />
-            </a>
-            <a
-              href="#"
-              className="text-background/70 hover:text-background transition-colors"
-              aria-label="Naver Band"
-            >
-              <Link2 size={20} />
-            </a>
-          </div>
-
-          {/* Partner Links */}
-          <div className="flex gap-4 text-xs text-background/70">
-            <a href="#" className="hover:text-background transition-colors">
-              VENUS GECKO
-            </a>
-            <span>|</span>
-            <a href="#" className="hover:text-background transition-colors">
-              도도시
-            </a>
-          </div>
         </div>
 
-        {/* Additional Links */}
-        <div className="mt-8 pt-8 border-t border-background/20 flex flex-col md:flex-row gap-4 text-xs text-background/70">
-          <a href="#" className="hover:text-background transition-colors">
-            {t('footer.availableList')}
-          </a>
-          <span>|</span>
-          <a href="#" className="hover:text-background transition-colors">
-            {t('footer.kakaoTalk')}
-          </a>
-          <span>|</span>
-          <a href="#" className="hover:text-background transition-colors">
-            {t('footer.instagram')}
-          </a>
-          <span>|</span>
-          <a href="#" className="hover:text-background transition-colors">
-            {t('footer.naverBand')}
-          </a>
-        </div>
       </div>
     </footer>
   );

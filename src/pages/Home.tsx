@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Instagram, MessageCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import SEOHead from '@/components/SEOHead';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import CoreEssenceSection from '@/components/CoreEssenceSection';
 import SignatureSection from '@/components/SignatureSection';
-import VisitSection from '@/components/VisitSection';
 import Footer from '@/components/Footer';
+import QuickMenu from '@/components/QuickMenu';
 
 /**
  * TOPS CRE - Crested Gecko Breeder Website
@@ -36,8 +34,8 @@ export default function Home() {
         <AboutSection />
         <CoreEssenceSection />
         <SignatureSection />
-        <VisitSection />
       </main>
+      <QuickMenu />
       <Footer />
     </div>
   );

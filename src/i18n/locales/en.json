@@ -14,47 +14,42 @@
   },
   "about": {
     "title": "Premium Companions",
-    "description": "We believe that geckos are more than just exotic pets. They are companions that bring wonder and connection into your life. Each gecko in our collection has been carefully selected and raised to ensure the perfect match for your family.",
-    "essence": "TOPS CRE represents a commitment to excellence in breeding, care, and the cultivation of meaningful human-gecko relationships. We focus on the wonder of life rather than artificial splendor.",
-    "whatMakesDifferent": "What Makes Us Different",
-    "differenceDescription": "At TOPS CRE, we understand that choosing a gecko is a significant decision. That's why we've built our reputation on three core principles that guide everything we do.",
-    "connection": "A Connection Beyond Words"
+    "description": "We believe that geckos are more than just exotic pets. They are companions that bring wonder and connection into your life. Each gecko in our collection has been carefully selected and raised to ensure the perfect match for your family."
   },
   "coreEssence": {
-    "title": "The Perfect Companion",
-    "description": "We define geckos not as mere exotic animals, but as your special 'companion family'. Experience the wonderful connection the moment your eyes meet.",
+    "title": "Purpose",
+    "description": "A tiny tail wagging with endless happiness, the gecko gathering place.",
     "values": [
       {
         "number": "01",
-        "title": "Pure Quality",
-        "description": "We showcase only top-tier morphs that have undergone strict selection processes."
+        "title": "Growth Record",
+        "description": "We document the changes from baby to adult with data and photos to confirm healthy growth."
       },
       {
         "number": "02",
-        "title": "Artistic Care",
-        "description": "We maintain the best condition in a delicate environment, treating them like family."
+        "title": "Space for Connection",
+        "description": "We share the unique charm and personality of crested geckos through photos and videos."
       },
       {
         "number": "03",
-        "title": "Premium Trust",
-        "description": "We promise continuous management and communication even after adoption."
+        "title": "Showcase & Share",
+        "description": "We show off the 'beauty' of geckos with their unique patterns and colors, sharing the joy of life with reptiles."
+      },
+      {
+        "number": "04",
+        "title": "Data History",
+        "description": "As the number of geckos grows, we aim to be a digital space that systematically manages each individual's characteristics and history."
       }
     ]
   },
   "signature": {
     "title": "Signature Line",
-    "description": "Explore our rare and exclusive lineup of geckos.",
-    "viewMale": "VIEW MALE",
-    "viewFemale": "VIEW FEMALE",
-    "viewMore": "VIEW MORE"
-  },
-  "visit": {
-    "title": "Get in Touch",
-    "description": "Have questions about our geckos or want to learn more about TOPS CRE? We'd love to hear from you. Reach out through any of our channels and we'll get back to you shortly.",
-    "contact": "Contact",
-    "kakao": "Kakao: TOPS CRE",
-    "instagram": "@tops_cre",
-    "bookVisit": "BOOK A VISIT"
+    "description": "Introducing our home's geckos.",
+    "filterAll": "ALL",
+    "filterMale": "MALE",
+    "filterFemale": "FEMALE",
+    "viewMore": "VIEW MORE",
+    "viewDetails": "VIEW DETAILS"
   },
   "footer": {
     "brand": "TOPS CRE",

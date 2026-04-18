@@ -1,8 +1,14 @@
 import { useState } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 interface NavigationProps {
   scrolled: boolean;
@@ -10,12 +16,11 @@ interface NavigationProps {
 
 /**
  * Navigation Component
- * Design: Minimalist header with cream background, forest green text
- * Features: Responsive mobile menu, language selector, contact button
+ * Design: Minimalist header with premium glassmorphism accents
+ * Features: Responsive mobile menu, Venus Gecko style language switcher, contact button
  */
 export default function Navigation({ scrolled }: NavigationProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [languageMenuOpen, setLanguageMenuOpen] = useState(false);
   const { t } = useTranslation();
   const { language, setLanguage } = useLanguage();
 
@@ -23,21 +28,21 @@ export default function Navigation({ scrolled }: NavigationProps) {
     { label: t('nav.home'), href: '#home' },
     { label: t('nav.about'), href: '#about' },
     { label: t('nav.signature'), href: '#signature' },
-    { label: t('nav.visit'), href: '#visit' },
   ];
 
   const languages = [
-    { code: 'en', label: 'English' },
-    { code: 'ko', label: '한국어' },
+    { code: 'ko', label: 'KR', flagUrl: 'https://flagcdn.com/w20/kr.png', name: '한국어' },
+    { code: 'en', label: 'EN', flagUrl: 'https://flagcdn.com/w20/us.png', name: 'English' },
   ];
+
+  const currentLang = languages.find(l => l.code === language) || languages[0];
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-background/95 backdrop-blur-sm shadow-sm'
           : 'bg-background'
-      }`}
+        }`}
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
@@ -62,43 +67,48 @@ export default function Navigation({ scrolled }: NavigationProps) {
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
-          {/* Language Selector */}
-          <div className="relative">
-            <button
-              className="hidden sm:flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors p-2 rounded-lg hover:bg-secondary/20"
-              onClick={() => setLanguageMenuOpen(!languageMenuOpen)}
-            >
-              <Globe size={18} />
-              <span>{language.toUpperCase()}</span>
-            </button>
-
-            {/* Language Dropdown */}
-            {languageMenuOpen && (
-              <div className="absolute right-0 mt-2 w-32 bg-card border border-border rounded-lg shadow-lg z-50">
+          {/* Language Selector (Venus Gecko Style) */}
+          <div className="hidden sm:block">
+            <DropdownMenu modal={false}>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="flex items-center gap-2 rounded-full border-foreground/10 glass bg-transparent hover:bg-foreground/5 hover:border-venus-gold/50 hover:text-venus-gold transition-all duration-300 h-9 px-4 group"
+                >
+                  <img src={currentLang.flagUrl} alt={currentLang.label} className="w-4 h-auto object-cover rounded-sm opacity-90" />
+                  <span className="text-[10px] tracking-widest font-bold font-jakarta text-foreground/80 group-hover:text-venus-gold">
+                    {currentLang.label}
+                  </span>
+                  <ChevronDown size={14} className="text-foreground/30 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                </Button>
+              </DropdownMenuTrigger>
+              
+              <DropdownMenuContent align="end" className="w-36 rounded-2xl glass-dark border-foreground/5 z-[100] p-2 bg-background/60 backdrop-blur-xl">
                 {languages.map((lang) => (
-                  <button
+                  <DropdownMenuItem
                     key={lang.code}
-                    onClick={() => {
-                      setLanguage(lang.code);
-                      setLanguageMenuOpen(false);
-                    }}
-                    className={`w-full text-left px-4 py-2 text-sm transition-colors ${
-                      language === lang.code
-                        ? 'bg-accent/20 text-accent font-semibold'
-                        : 'text-foreground/70 hover:text-foreground hover:bg-secondary/20'
+                    onClick={() => setLanguage(lang.code)}
+                    className={`flex items-center gap-3 px-2 py-2 cursor-pointer transition-all duration-300 rounded-xl outline-none ${
+                      language === lang.code ? 'dropdown-gold-active' : 'text-foreground/60 hover:bg-foreground/10 hover:text-foreground'
                     }`}
                   >
-                    {lang.label}
-                  </button>
+                    <img src={lang.flagUrl} alt={lang.label} className="w-5 h-auto object-cover rounded-sm" />
+                    <div className="flex flex-col">
+                      <span className="text-[10px] tracking-wider font-bold font-jakarta leading-tight">{lang.label}</span>
+                      <span className="text-[8px] text-foreground/30 uppercase font-jakarta leading-tight">{lang.name}</span>
+                    </div>
+                  </DropdownMenuItem>
                 ))}
-              </div>
-            )}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Contact Button */}
           <Button
             className="hidden sm:inline-flex bg-accent hover:bg-accent/90 text-accent-foreground font-medium"
             size="sm"
+            onClick={() => window.open('https://open.kakao.com/o/szrb6myh', '_blank', 'noopener,noreferrer')}
           >
             {t('nav.contact')}
           </Button>
@@ -127,12 +137,18 @@ export default function Navigation({ scrolled }: NavigationProps) {
                 {item.label}
               </a>
             ))}
-            <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium">
+            <Button 
+              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-medium"
+              onClick={() => {
+                window.open('https://open.kakao.com/o/szrb6myh', '_blank', 'noopener,noreferrer');
+                setMobileMenuOpen(false);
+              }}
+            >
               {t('nav.contact')}
             </Button>
 
-            {/* Mobile Language Selector */}
-            <div className="pt-4 border-t border-border space-y-2">
+            {/* Mobile Language Selector (Refined) */}
+            <div className="pt-4 border-t border-secondary space-y-2">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
@@ -140,13 +156,16 @@ export default function Navigation({ scrolled }: NavigationProps) {
                     setLanguage(lang.code);
                     setMobileMenuOpen(false);
                   }}
-                  className={`w-full text-left px-4 py-2 text-sm rounded-lg transition-colors ${
-                    language === lang.code
-                      ? 'bg-accent/20 text-accent font-semibold'
+                  className={`w-full flex items-center gap-3 px-4 py-3 text-sm rounded-xl transition-all ${language === lang.code
+                      ? 'dropdown-gold-active'
                       : 'text-foreground/70 hover:text-foreground hover:bg-secondary/20'
-                  }`}
+                    }`}
                 >
-                  {lang.label}
+                  <img src={lang.flagUrl} alt={lang.label} className="w-5 h-auto object-cover rounded-sm" />
+                  <div className="flex flex-col text-left">
+                    <span className="text-xs font-bold font-jakarta tracking-wide">{lang.label}</span>
+                    <span className="text-[10px] text-foreground/40 font-jakarta uppercase">{lang.name}</span>
+                  </div>
                 </button>
               ))}
             </div>
