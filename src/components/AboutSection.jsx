@@ -10,7 +10,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative pt-20 pb-10 md:pt-32 md:pb-16 bg-background"
+      className="relative pt-16 pb-4 md:pt-32 md:pb-16 bg-background"
     >
       <div className="container">
         <div className="max-w-4xl mx-auto text-center space-y-8">

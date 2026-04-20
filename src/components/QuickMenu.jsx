@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Instagram, MessageCircle, ListChecks } from "lucide-react";
+import { Instagram, MessageCircle, ListChecks, Plus } from "lucide-react";
 import { useState, useEffect } from "react";
 
 /**
@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 export default function QuickMenu() {
   const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   // Show QuickMenu after scrolling down a bit
   useEffect(() => {
@@ -29,10 +30,13 @@ export default function QuickMenu() {
 
   return (
     <div
-      className={`fixed right-4 bottom-4 md:right-8 md:bottom-8 z-50 flex flex-col gap-3 transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12 pointer-events-none"}`}
+      className={`fixed right-4 bottom-4 md:right-8 md:bottom-8 z-50 flex flex-col items-end gap-3 transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12 pointer-events-none"}`}
     >
-      <a
+      <div className={`flex flex-col gap-3 items-end transition-all duration-300 origin-bottom ${isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none mb-[-20px]"}`}>
+        <a
         href="https://www.feedle.me/profile/4e273a00-7444-402d-8a99-15a11907bce2"
+        target="_blank"
+        rel="noreferrer noopener"
         className="group relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-foreground text-background rounded-full shadow-xl hover:bg-background hover:text-foreground border-2 border-foreground hover:border-foreground hover:scale-105 transition-all duration-300"
         aria-label={t("footer.availableList")}
       >
@@ -44,6 +48,8 @@ export default function QuickMenu() {
 
       <a
         href="https://open.kakao.com/o/szrb6myh"
+        target="_blank"
+        rel="noreferrer noopener"
         className="group relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-foreground text-background rounded-full shadow-xl hover:bg-[#FEE500] hover:text-[#191919] hover:border-[#FEE500] border-2 border-foreground hover:scale-105 transition-all duration-300"
         aria-label={t("footer.kakaoTalk")}
       >
@@ -55,6 +61,8 @@ export default function QuickMenu() {
 
       <a
         href="https://www.instagram.com/tops_cre/"
+        target="_blank"
+        rel="noreferrer noopener"
         className="group relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-foreground text-background rounded-full shadow-xl hover:bg-background hover:text-[#E1306C] border-2 border-foreground hover:border-[#E1306C] hover:scale-105 transition-all duration-300"
         aria-label={t("footer.instagram")}
       >
@@ -63,6 +71,15 @@ export default function QuickMenu() {
           {t("footer.instagram")}
         </span>
       </a>
+      </div>
+
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-foreground text-background rounded-full shadow-xl hover:scale-105 border-2 border-foreground transition-all duration-300"
+        aria-label="Toggle Quick Menu"
+      >
+        <Plus size={28} className={`transition-transform duration-300 ${isOpen ? "rotate-45" : "rotate-0"}`} />
+      </button>
     </div>
   );
 }

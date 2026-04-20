@@ -10,7 +10,7 @@ export default function CoreEssenceSection() {
   const coreValues = t("coreEssence.values", { returnObjects: true });
 
   return (
-    <section className="py-10 md:py-16 bg-background">
+    <section className="pt-4 pb-10 md:py-16 bg-background">
       <div className="container">
         <div className="text-center mb-12 md:mb-20">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">

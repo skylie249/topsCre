@@ -82,6 +82,32 @@ export default function SignatureSection() {
     setCurrentIndex(0); // Reset index on filter change
   };
 
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe || isRightSwipe) {
+      if (isLeftSwipe) {
+        handleNext();
+      } else {
+        handlePrev();
+      }
+    }
+  };
+
   return (
     <section id="signature" className="py-16 md:py-24 bg-background">
       <div className="container overflow-hidden">
@@ -121,7 +147,12 @@ export default function SignatureSection() {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative px-0 md:px-12 mx-auto w-full group">
+        <div 
+          className="relative px-0 md:px-12 mx-auto w-full group overflow-hidden touch-pan-y"
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+        >
           <div className="overflow-hidden p-4 -m-4">
             <div
               className="flex transition-transform duration-500 ease-out"
